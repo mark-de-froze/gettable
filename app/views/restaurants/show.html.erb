@@ -1,0 +1,31 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @restaurant.name %>
+</p>
+
+<p>
+  <strong>Address:</strong>
+  <%= @restaurant.address %>
+</p>
+
+<p>
+  <strong>Subway:</strong>
+  <%= @restaurant.subway %>
+</p>
+
+<p>
+  <strong>Opened at:</strong>
+  <%= @restaurant.opened_at.strftime("%H:%M") %>
+</p>
+
+<p>
+  <strong>Closed at:</strong>
+  <%= @restaurant.closed_at.strftime("%H:%M") %>
+</p>
+
+<%= link_to 'All Table', restaurant_tables_path(@restaurant) %> |
+<%= link_to 'New Table', new_restaurant_table_path(@restaurant) %> |
+<%= link_to 'Edit', edit_restaurant_path(@restaurant) %> |
+<%= link_to 'Back', restaurants_path %>

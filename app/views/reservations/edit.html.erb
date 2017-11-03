@@ -1,0 +1,6 @@
+<h1>Editing Reservation</h1>
+
+<%= render 'form', reservation: @reservation %>
+
+<%= link_to 'Show', restaurant_table_reservation_path(@restaurant, @table, @reservation) %> |
+<%= link_to 'Back', restaurant_table_reservations_path(@restaurant, @table) %>

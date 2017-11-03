@@ -1,0 +1,27 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Table:</strong>
+  <%= @reservation.table.to_label %>
+</p>
+
+<p>
+  <strong>Starts at:</strong>
+  <%= @reservation.starts_at %>
+</p>
+
+<p>
+  <strong>Ends at:</strong>
+  <%= @reservation.ends_at %>
+</p>
+
+<p>
+  <strong>Visitor:</strong>
+  <%= @reservation.visitor.name %> <br>
+  <%= @reservation.visitor.phone %> <br>
+  <%= @reservation.visitor.note %> <br>
+  <%= @reservation.visitor.number_persons %> <br>
+</p>
+
+<%= link_to 'Edit', edit_restaurant_table_reservation_path(@restaurant, @table, @reservation) %> |
+<%= link_to 'Back', restaurant_table_reservations_path %>

@@ -1,3 +1,11 @@
 Rails.application.routes.draw do
-  # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
+  resources :visitors
+
+  resources :restaurants do
+    resources :tables do
+      resources :reservations
+    end
+  end
+
+  root to: 'welcome#index'
 end

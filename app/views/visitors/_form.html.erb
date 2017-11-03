@@ -1,0 +1,15 @@
+<%= simple_form_for(@visitor) do |f| %>
+  <%= f.error_notification %>
+
+  <div class="form-inputs">
+    <%= f.association :reservation %>
+    <%= f.input :name %>
+    <%= f.input :phone %>
+    <%= f.input :note %>
+    <%= f.input :number_persons, input_html: {min: 1} %>
+  </div>
+
+  <div class="form-actions">
+    <%= f.button :submit %>
+  </div>
+<% end %>

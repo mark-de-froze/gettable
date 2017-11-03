@@ -1,0 +1,15 @@
+<%= simple_form_for([@table.restaurant, @table]) do |f| %>
+  <%= f.error_notification %>
+
+  <div class="form-inputs">
+    <%= field_set_tag 'Restaurant' do %>
+        <%= @restaurant.to_label %>
+        <%= f.hidden_field :restaurant_id %>
+    <% end %>
+    <%= f.input :number_table, input_html: {min: 1} %>
+  </div>
+
+  <div class="form-actions">
+    <%= f.button :submit %>
+  </div>
+<% end %>

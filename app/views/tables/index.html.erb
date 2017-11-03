@@ -1,0 +1,28 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Restaurant - <%= @restaurant.to_label %></h1>
+<h1>Tables</h1>
+
+<table class="table">
+  <thead>
+    <tr>
+      <th>Number table</th>
+      <th colspan="3" class="w-25"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @tables.each do |table| %>
+        <tr>
+          <td><%= table.number_table %></td>
+          <td><%= link_to 'Show', [@restaurant, table] %></td>
+          <td><%= link_to 'Edit', ['edit', @restaurant, table]  %></td>
+          <td><%= link_to 'Destroy', [@restaurant, table], method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Table', new_restaurant_table_path(@restaurant) %>

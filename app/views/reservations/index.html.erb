@@ -1,0 +1,31 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Restaurant - <%= @restaurant.to_label %></h1>
+<h1>Tables - <%= @table.to_label %></h1>
+<h1>Reservations</h1>
+
+<table class="table">
+  <thead>
+  <tr>
+    <th>Starts at</th>
+    <th>Ends at</th>
+    <th colspan="3" class="w-25"></th>
+  </tr>
+  </thead>
+
+  <tbody>
+  <% @reservations.each do |reservation| %>
+      <tr>
+        <td><%= reservation.starts_at %></td>
+        <td><%= reservation.ends_at %></td>
+        <td><%= link_to 'Show', [@restaurant, @table, reservation] %></td>
+        <td><%= link_to 'Edit', edit_restaurant_table_reservation_path(@restaurant, @table, reservation) %></td>
+        <td><%= link_to 'Destroy', [@restaurant, @table, reservation], method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+  <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Reservation', new_restaurant_table_reservation_path(@restaurant, @table) %>
